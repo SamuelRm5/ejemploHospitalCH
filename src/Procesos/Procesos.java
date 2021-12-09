@@ -27,14 +27,20 @@ public class Procesos {
 		menu+="2. Registrar Empleado\n";
 		menu+="3. Registrar Cita Medica\n";
 		menu+="4. Imprimir Informacion\n";
-		menu+="5. Buscar por documento\n";
+		menu+="5. Buscar por DNI\n";
 		menu+="6. Salir\n\n";
 		menu+="Ingrese una Opción\n";
+		
 		
 		int opcion=0;
 		
 		do {
-			opcion=Integer.parseInt(JOptionPane.showInputDialog(menu));
+			try {
+				opcion=Integer.parseInt(JOptionPane.showInputDialog(menu));
+			} catch (Exception e) {
+				System.out.println("ERROR!! Intoduce los numeros en el menú");
+			}
+			
 			switch (opcion) {
 			case 1: {registrarPaciente();  break;}
 			case 2: {registrarEmpleado();  break;}
